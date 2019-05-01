@@ -24,7 +24,8 @@
       onChange: function (date) {
         fetch(`/app/available/{{ provider.id }}?date=${date[0].getTime()}`)
           .then(function(response) {
-            response.text().then(function (html) {
+            response.text()
+              .then(function (html) {
               document.getElementById('hours').innerHTML = html
             })
           })
